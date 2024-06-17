@@ -17,12 +17,12 @@
 
 <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=aac1932eb359403c68bcac83c892ec50"></script>
 <script>
-    mapoutput (37.5069739187173, 126.890319120085);
-    
-    function mapoutput (a, b){
+    mapoutput (37.5069739187173, 126.890319120085); //실핼할 때 값
+
+    function mapoutput (a, b){ //모형
         const mapContainer = document.getElementById('map'), 
         mapOption = { 
-            center: new kakao.maps.LatLng(37.5069739187173, 126.890319120085),
+            center: new kakao.maps.LatLng(a, b),
             lenel: 3
         };
 
