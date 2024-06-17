@@ -37,14 +37,19 @@
         const btns = document.querySelectorAll(".btn");
 
         btns.forEach(function(ele, idx){
+            // ele -> 각 버튼, idx -> 0 ~ 순번
             ele.addEventListener('click', function(){
-                targetdivp[0].innerHTML = mapinfo[idx].위도;
-                targetdivp[1].innerHTML = mapinfo[idx].경도;
+                contentinner(idx)
             })
         })
 
-        targetdivp[0].innerHTML = mapinfo[1].위도;
-        targetdivp[1].innerHTML = mapinfo[1].경도;
+        // 매개인자가 있는 함수
+        function contentinner(num){ // 선언적함수 위치 상관 없이 먼저 번역 저장
+            targetdivp[0].innerHTML = mapinfo[num].위도;
+            targetdivp[1].innerHTML = mapinfo[num].경도;
+        }
+       
+
     </script>
 </body>
 </html>
