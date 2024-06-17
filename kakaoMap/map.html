@@ -7,10 +7,11 @@
 </head>
 <body>
 <!-- 지도를 표시할 div 입니다 -->
-<div>
-    <button class="btn">신도림</button>
-    <button class="btn">미금</button>
-    <button class="btn">강남</button>
+<div id="mapBtns">
+    <!-- <button class="btn" data-map="[위도, 경도]">신도림</button> -->
+    <button class="btn" data-map="[37.5069739187173, 126.890319120085]">신도림</button>
+    <button class="btn" data-map="[37.485856, 126.897438]">미금</button>
+    <button class="btn" data-map="[37.5069739187173, 126.890319120085]">강남</button>
 </div>
 <div id="map" style="width:100%;height:350px;"></div>
 
@@ -18,6 +19,16 @@
 <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=aac1932eb359403c68bcac83c892ec50"></script>
 <script>
     mapoutput (37.5069739187173, 126.890319120085); //실핼할 때 값
+
+    const btns = document.querySelectorAll("#mapBtns .btn");
+    btns.forEach(function( ele, idx){
+        ele.addEventListener('click', function(){
+            console.log(`${ele}가 클릭하면 ${idx}번째 버튼을 클릭 ${this}가 클릭`);
+            console.log(this.dataset.map, Array.isArray(this.dataset.map) )
+            // mapoutput (37.5069739187173, 126.890319120085);
+        })
+
+    })
 
     function mapoutput (a, b){ //모형
         const mapContainer = document.getElementById('map'), 
